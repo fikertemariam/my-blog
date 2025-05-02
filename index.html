@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>My Blog</h1>
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <button id="theme-toggle">🌙</button>
+    </nav>
+  </header>
+  
+  
+
+  <div class="content">
+    <main class="blog-grid">
+      <article class="post-card">
+        <img src="images/blog.png" alt="Post 1">
+        <h2>Getting Started with Flexbox</h2>
+        <p>Learn the basics of Flexbox and how it simplifies layout design in CSS.</p>
+      </article>
+    
+      <article class="post-card">
+        <img src="images/blog.png" alt="Post 2">
+        <h2>Responsive Grids with CSS Grid</h2>
+        <p>Build complex and flexible grid systems using CSS Grid and media queries.</p>
+      </article>
+    
+      <article class="post-card">
+        <img src="images/blog.png" alt="Post 3">
+        <h2>Dark Mode with CSS Variables</h2>
+        <p>Switch themes dynamically using CSS custom properties and JavaScript.</p>
+      </article>
+    </main>
+    
+      
+      <aside class="post-card">
+        <div class="profile-card">
+          <img src="images/pp.jpg" alt="Profile photo" class="avatar">
+          <h3>Lumi</h3>
+          <p>Web enthusiast, CSS explorer, and part-time keyboard smasher.</p>
+        </div>
+      </aside>
+      
+
+    <aside class="post-card">
+      <h3>About Me</h3>
+      <p>Just a developer learning CSS magic.</p>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Blog</p>
+  </footer>
+  <script>
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+  
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+  <script>
+    const toggleThemeBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme');
+  
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark');
+      toggleThemeBtn.textContent = '☀️';
+    }
+  
+    toggleThemeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggleThemeBtn.textContent = isDark ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
