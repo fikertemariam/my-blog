@@ -136,7 +136,7 @@ header {
   
     .nav-links a {
       padding: 10px 0;
-      border-top: 1px solid #868484;
+      border-top: 1px solid #eee;
     }
   }
 /* Blog Grid Layout */
@@ -178,9 +178,8 @@ header {
 /* Define default colors and styles in :root */
 :root {
     --bg-color: #ffffff;
-    --text-color: #868484;
+    --text-color: #111111;
     --card-bg: #ffffff;
-    --cardNav-bg: #000000;
     --card-shadow: rgba(0, 0, 0, 0.05);
   }
   
@@ -190,9 +189,8 @@ header {
     color: var(--text-color);
     transition: background 0.3s, color 0.3s;
   }
-  .profile-card, .nav.nav-links{
+  .profile-card{
     background: var(--card-bg);
-    color: var(--text-color);
     box-shadow: 0 2px 8px var(--card-shadow);
   }
   .post-card {
@@ -207,24 +205,8 @@ header {
     --card-bg: #1e1e1e;
     --card-shadow: rgba(255, 255, 255, 0.05);
   }
-  .post-card h2 {
+        .post-card h2 {
     font-size: 1.25rem;
     padding: 15px;
     margin-bottom: 0;
   }
-  .nav-links{
-    background: var(--card-bg);
-    color: ffffff;
-    box-shadow: 0 2px 8px var(--card-shadow);
-  }
-  /* Dark mode text color adjustments */
-body.dark .profile-card,
-body.dark .about-me {
-  color: var(--text-color);  /* Make text readable in dark mode */
-}
-
-/* Specific sections (like profile) - override if needed */
-body.dark .profile-card h3,
-body.dark .about-me p {
-  color: #ddd;  /* Lighten text in dark mode */
-}
